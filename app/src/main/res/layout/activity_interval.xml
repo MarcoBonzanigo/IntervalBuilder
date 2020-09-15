@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        tools:context=".activities.IntervalActivity"
+        tools:ignore="OnClick">
+    <View
+            android:id="@+id/interval_focus_sink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
+
+    <Button
+            android:id="@+id/interval_button_play_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_dark"
+            android:textColor="@color/ibPrimaryDeepDark"
+            android:fontFamily="@font/font_awesome_900"
+            android:gravity="center"
+            android:onClick="onButtonClicked"
+            android:padding="0dp"
+            android:text="@string/icon_automatic"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+            android:id="@+id/interval_text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:padding="0dp"
+            android:text="Title"
+            android:textSize="20sp"
+            android:lines="2"
+            android:maxLength="20"
+            app:layout_constraintLeft_toRightOf="@id/interval_button_play_mode"
+            app:layout_constraintRight_toLeftOf="@id/interval_button_load"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+            android:id="@+id/interval_button_load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_dark"
+            android:textColor="@color/ibPrimaryDeepDark"
+            android:onClick="onButtonClicked"
+            android:fontFamily="@font/font_awesome_900"
+            android:gravity="center"
+            android:padding="0dp"
+            android:text="@string/icon_save"
+            android:textSize="20sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+            android:id="@+id/interval_image_exercise"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:background="@drawable/fragment_dark"
+            app:layout_constraintBottom_toTopOf="@id/interval_layout_interval"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/interval_button_load"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/interval_layout_interval"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@id/interval_layout_rest"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+                android:id="@+id/interval_text_countdown_interval_label"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textColor="@color/ibPrimaryDeepDark"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:text="Interval:"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/interval_text_countdown_interval_value"/>
+
+        <TextView
+                android:id="@+id/interval_text_countdown_interval_value"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_dark"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="0 Min 0 Sec"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintLeft_toRightOf="@id/interval_text_countdown_interval_label"
+                app:layout_constraintRight_toRightOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/interval_layout_rest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@id/interval_layout_repetitions"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+                android:id="@+id/interval_text_countdown_rest_label"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textColor="@color/ibPrimaryDeepDark"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:text="Rest:"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/interval_text_countdown_rest_value"/>
+
+        <TextView
+                android:id="@+id/interval_text_countdown_rest_value"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_dark"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="0 Min 0 Sec"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintLeft_toRightOf="@id/interval_text_countdown_rest_label"
+                app:layout_constraintRight_toRightOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/interval_layout_repetitions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@id/interval_layout_next"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+                android:id="@+id/interval_text_countdown_repetitions_label"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textColor="@color/ibPrimaryDeepDark"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:text="Remaining Repetitions:"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/interval_text_countdown_repetitions_value"/>
+
+        <TextView
+                android:id="@+id/interval_text_countdown_repetitions_value"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_dark"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="0"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintLeft_toRightOf="@id/interval_text_countdown_repetitions_label"
+                app:layout_constraintRight_toRightOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/interval_layout_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@id/interval_edit_text_category"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+                android:id="@+id/interval_text_countdown_next_label"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textColor="@color/ibPrimaryDeepDark"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:text="Next:"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/interval_text_countdown_next_value"/>
+
+        <TextView
+                android:id="@+id/interval_text_countdown_next_value"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_dark"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="10dp"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintLeft_toRightOf="@id/interval_text_countdown_next_label"
+                app:layout_constraintRight_toRightOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <AutoCompleteTextView
+            android:id="@+id/interval_edit_text_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:hint="Category"
+            android:visibility="gone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:minLines="1"
+            app:layout_constraintBottom_toTopOf="@id/interval_edit_text_description"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+    <!--    DESCRIPTION -->
+    <!--    DESCRIPTION -->
+    <!--    DESCRIPTION -->
+
+    <EditText
+            android:id="@+id/interval_edit_text_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:hint="Exercise Description (Optional)"
+            android:inputType="textMultiLine"
+            android:visibility="gone"
+            android:lines="5"
+            android:maxLength="256"
+            android:maxLines="5"
+            android:minLines="5"
+            app:layout_constraintBottom_toTopOf="@id/interval_button_start"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+    <!--    ADD-->
+    <!--    ADD-->
+    <!--    ADD-->
+
+    <Button
+            android:id="@+id/interval_button_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:background="@drawable/button_dark"
+            android:textColor="@color/ibPrimaryDeepDark"
+            android:onClick="onButtonClicked"
+            android:text="Start"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

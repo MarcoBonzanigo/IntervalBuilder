@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        tools:context=".activities.ExerciseActivity"
+        tools:ignore="OnClick">
+    <View
+            android:id="@+id/exercise_focus_sink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
+
+    <Button
+            android:id="@+id/exercise_button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/font_awesome_900"
+            android:gravity="center"
+            android:onClick="onButtonClicked"
+            android:padding="0dp"
+            android:text="@string/icon_load"
+            android:textSize="20sp"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+            android:id="@+id/exercise_button_toggle_lock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_dark"
+            android:textColor="@color/ibPrimaryDeepDark"
+            android:fontFamily="@font/font_awesome_900"
+            android:gravity="center"
+            android:onClick="onButtonClicked"
+            android:padding="0dp"
+            android:text="@string/icon_lock"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+            android:id="@+id/exercise_button_load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/font_awesome_900"
+            android:gravity="center"
+            android:onClick="onButtonClicked"
+            android:padding="0dp"
+            android:text="@string/icon_save"
+            android:textSize="20sp"
+            android:visibility="invisible"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+            android:id="@+id/exercise_scroll_active"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:background="@drawable/fragment_dark"
+            app:layout_constraintBottom_toTopOf="@id/exercise_layout_image"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/exercise_button_toggle_lock">
+
+        <LinearLayout
+                android:id="@+id/exercise_layout_active"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/exercise_layout_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/exercise_edit_text_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+                android:id="@+id/exercise_button_image"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_dark"
+                android:textColor="@color/ibPrimaryDeepDark"
+                android:onClick="onButtonClicked"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:text="Select an Image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/exercise_image_view_exercise"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+                android:id="@+id/exercise_button_image_state"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/transparent"
+                android:elevation="1dp"
+                android:text="No Image Selected"
+                android:textColor="@color/white"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="4"
+                android:shadowColor="@color/black"
+                android:textStyle="bold"
+                android:onClick="onButtonClicked"
+                app:layout_constraintBottom_toBottomOf="@id/exercise_image_view_exercise"
+                app:layout_constraintLeft_toLeftOf="@id/exercise_image_view_exercise"
+                app:layout_constraintRight_toRightOf="@id/exercise_image_view_exercise"
+                app:layout_constraintTop_toTopOf="@id/exercise_image_view_exercise" />
+
+        <ImageView
+                android:id="@+id/exercise_image_view_exercise"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/workout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="H,10,10"
+                app:layout_constraintLeft_toRightOf="@id/exercise_button_image"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    TITLE -->
+    <!--    TITLE -->
+    <!--    TITLE -->
+
+    <EditText
+            android:id="@+id/exercise_edit_text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:gravity="center_horizontal"
+            android:hint="Exercise Title"
+            android:inputType="text"
+            android:maxLines="1"
+            android:minLines="1"
+            android:background="@drawable/ib_text_dark"
+            app:layout_constraintBottom_toTopOf="@id/exercise_edit_text_category"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    <AutoCompleteTextView
+            android:id="@+id/exercise_edit_text_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:hint="Category"
+            android:visibility="gone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:minLines="1"
+            app:layout_constraintBottom_toTopOf="@id/exercise_edit_text_description"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+    <!--    DESCRIPTION -->
+    <!--    DESCRIPTION -->
+    <!--    DESCRIPTION -->
+
+    <EditText
+            android:id="@+id/exercise_edit_text_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:hint="Exercise Description (Optional)"
+            android:inputType="textMultiLine"
+            android:visibility="gone"
+            android:lines="5"
+            android:maxLength="256"
+            android:maxLines="5"
+            android:minLines="5"
+            app:layout_constraintBottom_toTopOf="@id/exercise_button_add"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+    <!--    ADD-->
+    <!--    ADD-->
+    <!--    ADD-->
+
+    <Button
+            android:id="@+id/exercise_button_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_dark"
+            android:textColor="@color/ibPrimaryDeepDark"
+            android:onClick="onButtonClicked"
+            android:text="Add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

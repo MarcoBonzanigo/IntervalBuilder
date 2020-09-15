@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Interval Builder</string>
+    <string name="builder_icon"><annotation color="#006064,1"><annotation size="5,1"><annotation font="font_awesome">&#xf5ae;</annotation></annotation></annotation>\n Builder</string>
+    <string name="workout_icon"><annotation color="#006064,1"><annotation size="5,1"><annotation font="font_awesome">&#xf44b;</annotation></annotation></annotation>\n Exercises</string>
+    <string name="intervals_icon"><annotation color="#006064,1"><annotation size="5,1"><annotation font="font_awesome">&#xf2f2;</annotation></annotation></annotation>\n Intervals</string>
+    <string name="settings_icon"><annotation color="#006064,1"><annotation size="5,1"><annotation font="font_awesome">&#xf085;</annotation></annotation></annotation>\n Settings</string>
+    <string name="interval_layout_string"><![CDATA[<b>Interval: </b>]]> %1$s<![CDATA[<br><b>Rest: </b>]]> %2$s<![CDATA[<br><b>Repetitions: </b>]]> %3$d<![CDATA[<br><b>Exercise: </b>]]> %4$s</string>
+    <string name="rest_total">Rest Total:\n%1$s</string>
+    <string name="interval_total">Interval Total:\n%1$s</string>
+    <string name="interval">Interval</string>
+    <string name="interval_title_optional">Interval Title (Optional)</string>
+    <string name="description">Description</string>
+    <string name="title">Title</string>
+    <string name="exercise_single_text">%1$s\n(Single Exercise)</string>
+    <string name="exercise_set_text">%1$s\n(Set Exercise)</string>
+    <string name="select_exercise">Select an Exercise</string>
+    <string name="single">(Single)</string>
+    <string name="set">(Set)</string>
+    <string name="next_exercise">Next: %1$s</string>
+    <string name="manual_mode">Switched to manual mode</string>
+    <string name="automatic_mode">Switched to automatic mode</string>
+    <string name="none">None</string>
+
+
+
+    <string name="icon_lock">&#xf023;</string>
+    <string name="icon_unlock">&#xf09c;</string>
+    <string name="icon_load">&#xf0c7;</string>
+    <string name="icon_save">&#xf07c;</string>
+    <string name="icon_automatic">&#xf2f2;</string>
+    <string name="icon_manual">&#xf0a7;</string>
+    <string name="remove_exercise">Remove Exercise</string>
+</resources>

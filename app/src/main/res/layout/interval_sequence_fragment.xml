@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/interval_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fragment">
+
+    <Button
+            android:id="@+id/interval_fragment_button_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparentBlack_1"
+            android:onClick="onFragmentButtonClicked"
+            android:layout_margin="10dp"
+            android:text="&#xf00d;"
+            android:textColor="@color/ibPrimaryPastel"
+            android:visibility="invisible"
+            app:fontFamily="@font/font_awesome_900"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+            android:id="@+id/interval_fragment_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:textColor="@color/ibPrimaryPastel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+            android:id="@+id/interval_fragment_button_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/transparentBlack_1"
+            android:onClick="onFragmentButtonClicked"
+            android:text="&#xf106;"
+            android:textColor="@color/ibPrimaryPastel"
+            android:visibility="invisible"
+            app:fontFamily="@font/font_awesome_900"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+            android:id="@+id/interval_fragment_button_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/transparentBlack_1"
+            android:onClick="onFragmentButtonClicked"
+            android:text="&#xf107;"
+            android:textColor="@color/ibPrimaryPastel"
+            android:visibility="invisible"
+            app:fontFamily="@font/font_awesome_900"
+            app:layout_constraintLeft_toRightOf="@id/interval_fragment_button_up"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

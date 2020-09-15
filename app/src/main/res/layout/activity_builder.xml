@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/builder_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        tools:context=".activities.BuilderActivity">
+
+
+    <!--    TODO: in style auslagern-->
+    <!--    TODO: lock /unlock sorting-->
+    <!--    TODO: add picture-->
+    <Button
+            android:id="@+id/builder_button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_dark"
+            android:textColor="@color/ibPrimaryDeepDark"
+            android:fontFamily="@font/font_awesome_900"
+            android:gravity="center"
+            android:onClick="onButtonClicked"
+            android:padding="0dp"
+            android:text="@string/icon_load"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+            android:id="@+id/builder_button_toggle_lock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_dark"
+            android:textColor="@color/ibPrimaryDeepDark"
+            android:fontFamily="@font/font_awesome_900"
+            android:gravity="center"
+            android:onClick="onButtonClicked"
+            android:padding="0dp"
+            android:text="@string/icon_lock"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+            android:id="@+id/builder_button_load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_dark"
+            android:textColor="@color/ibPrimaryDeepDark"
+            android:fontFamily="@font/font_awesome_900"
+            android:gravity="center"
+            android:onClick="onButtonClicked"
+            android:padding="0dp"
+            android:text="@string/icon_save"
+            android:textSize="20sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+            android:id="@+id/builder_scroll_active"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/fragment_dark"
+            android:padding="5dp"
+            app:layout_constraintBottom_toTopOf="@id/builder_layout_exercise"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/builder_button_toggle_lock">
+
+        <LinearLayout
+                android:id="@+id/builder_layout_active"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/builder_layout_exercise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/builder_text_interval_label"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+                android:id="@+id/builder_button_exercise"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_dark"
+                android:textColor="@color/ibPrimaryDeepDark"
+                android:onClick="onButtonClicked"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:text="@string/select_exercise"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:layout_constraintHorizontal_weight="5"
+                app:layout_constraintBottom_toBottomOf="@+id/builder_layout_exercise"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/builder_button_exercise_remove" />
+
+        <Button
+                android:id="@+id/builder_button_exercise_remove"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/ib_button_small"
+                android:onClick="onButtonClicked"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:text="@string/remove_exercise"
+                android:visibility="gone"
+                app:layout_constraintHorizontal_weight="5"
+                app:layout_constraintBottom_toBottomOf="@+id/builder_layout_exercise"
+                app:layout_constraintLeft_toRightOf="@+id/builder_button_exercise"
+                app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    INTERVAL -->
+    <!--    INTERVAL -->
+    <!--    INTERVAL -->
+
+    <TextView
+            android:id="@+id/builder_text_interval_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ibPrimaryPastel"
+            android:text="INTERVAL"
+            app:layout_constraintBottom_toTopOf="@id/builder_layout_time_interval"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    <LinearLayout
+            android:id="@+id/builder_layout_time_interval"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/builder_text_rest_label"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+                android:id="@+id/builder_button_interval_minus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/button_dark"
+                android:textColor="@color/ibPrimaryDeepDark"
+                android:onClick="onButtonClicked"
+                android:text="- 5s" />
+
+        <TextView
+                android:id="@+id/builder_text_interval_value"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:background="@drawable/ib_text_dark"
+                android:gravity="center"
+                android:text="0 Min 30 Sec"
+                android:textSize="15sp" />
+
+        <Button
+                android:id="@+id/builder_button_interval_plus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/button_dark"
+                android:textColor="@color/ibPrimaryDeepDark"
+                android:onClick="onButtonClicked"
+                android:text="+ 5s" />
+    </LinearLayout>
+
+    <!--    REST -->
+    <!--    REST -->
+    <!--    REST -->
+
+    <TextView
+            android:id="@+id/builder_text_rest_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ibPrimaryPastel"
+            android:text="REST"
+            app:layout_constraintBottom_toTopOf="@id/builder_layout_time_rest"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    <LinearLayout
+            android:id="@+id/builder_layout_time_rest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/builder_text_repetitions_label"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+                android:id="@+id/builder_button_rest_minus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/button_dark"
+                android:textColor="@color/ibPrimaryDeepDark"
+                android:onClick="onButtonClicked"
+                android:text="- 5s" />
+
+        <TextView
+                android:id="@+id/builder_text_rest_value"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:background="@drawable/ib_text_dark"
+                android:gravity="center"
+                android:text="0 Min 15 Sec"
+                android:textSize="15sp" />
+
+        <Button
+                android:id="@+id/builder_button_rest_plus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/button_dark"
+                android:textColor="@color/ibPrimaryDeepDark"
+                android:onClick="onButtonClicked"
+                android:text="+ 5s" />
+    </LinearLayout>
+
+    <!--    REPETITIONS-->
+    <!--    REPETITIONS-->
+    <!--    REPETITIONS-->
+
+    <TextView
+            android:id="@+id/builder_text_repetitions_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ibPrimaryPastel"
+            android:text="REPETITIONS"
+            app:layout_constraintBottom_toTopOf="@id/builder_layout_repetitions"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    <LinearLayout
+            android:id="@+id/builder_layout_repetitions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/builder_layout_add"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+                android:id="@+id/builder_button_repetitions_minus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/button_dark"
+                android:textColor="@color/ibPrimaryDeepDark"
+                android:onClick="onButtonClicked"
+                android:text="- 1" />
+
+        <TextView
+                android:id="@+id/builder_text_repetitions_value"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:background="@drawable/ib_text_dark"
+                android:gravity="center"
+                android:text="3 Times"
+                android:textSize="15sp" />
+
+        <Button
+                android:id="@+id/builder_button_repetitions_plus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/button_dark"
+                android:textColor="@color/ibPrimaryDeepDark"
+                android:onClick="onButtonClicked"
+                android:text="+ 1" />
+    </LinearLayout>
+
+    <!--    ADD-->
+    <!--    ADD-->
+    <!--    ADD-->
+
+    <LinearLayout
+            android:id="@+id/builder_layout_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+                android:id="@+id/builder_text_stats_interval"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="0.5"
+                android:textColor="@color/ibPrimaryPastel"
+                android:text="Total:\n30 min 30 sec"
+                android:textAlignment="center" />
+
+        <Button
+                android:id="@+id/builder_button_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_dark"
+                android:textColor="@color/ibPrimaryDeepDark"
+                android:onClick="onButtonClicked"
+                android:text="Add" />
+
+        <TextView
+                android:id="@+id/builder_text_stats_rest"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="0.5"
+                android:textColor="@color/ibPrimaryPastel"
+                android:text="Total:\n 20 min 20 sec"
+                android:textAlignment="center" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
